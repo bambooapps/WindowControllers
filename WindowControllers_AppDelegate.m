@@ -3,10 +3,11 @@
 //  WindowControllers
 //
 //  Created by Cesar Tardaguila on 03/09/09.
-//  Copyright design-nation 2009 . All rights reserved.
+//  www.bambooapps.com
 //
 
 #import "WindowControllers_AppDelegate.h"
+#import "DetailSheetController.h"
 
 @implementation WindowControllers_AppDelegate
 
@@ -204,6 +205,8 @@
 - (IBAction) openInSheet: sender
 {
 	NSLog(@"opening sheet" );
+	
+	[ [ DetailSheetController alloc ] initSheetWithAppDelegate: self ];
 }
  
 - (void)dealloc {
