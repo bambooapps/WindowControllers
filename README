@@ -1,0 +1,1 @@
+Ejemplo de lanzamiento de sheets, encapsuladas en sus propios xib, de forma que pueden ser controladas de forma independiente por un NSWindowController.
