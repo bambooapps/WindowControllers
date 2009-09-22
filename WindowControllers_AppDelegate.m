@@ -12,6 +12,7 @@
 @implementation WindowControllers_AppDelegate
 
 @synthesize window;
+@synthesize dataController;
 
 /**
     Returns the support directory for the application, used to store the Core Data

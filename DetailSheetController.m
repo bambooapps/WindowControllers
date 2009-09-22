@@ -22,7 +22,7 @@
 		contextInfo:(void  *)contextInfo;
 {
 	[ sheetWindow orderOut:nil ];
-	[ self autorelease ];
+	[ self release ];
 }
 
 @end
@@ -37,7 +37,7 @@
 		return nil;
 	}
 	
-	appDelegate = [ appDel retain ];
+	self.appDelegate = appDel;
 	
 	[ NSApp beginSheet: self.window
 		modalForWindow:[ NSApp mainWindow ] modalDelegate: self
@@ -48,17 +48,25 @@
 	return self;
 }
 
+-(void) awakeFromNib
+{
+	[ arrayController setSelectedObjects: [ self.appDelegate.dataController selectedObjects] ];	
+}
+
 - (IBAction)actionCloseSheet:(id)sender
 {
-	NSLog( @"actionCloseSheet" );
-	[ NSApp endSheet:[ self window ] returnCode:0 ];
+	[ NSApp endSheet:[ self window ] returnCode:0 ];	
 	//TODO. Ejecutar la acción deseada
 }
 
 - (IBAction)cancelSheet:(id)sender
 {
-	NSLog( @"cancelSheet" );
 	[ NSApp endSheet:[ self window ] returnCode:0 ];	
+}
+
+-( WindowControllers_AppDelegate *) appDelegate
+{
+	return appDelegate;
 }
 
 

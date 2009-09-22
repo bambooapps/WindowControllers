@@ -13,7 +13,7 @@
 {
 	WindowControllers_AppDelegate *appDelegate;
 	
-	IBOutlet NSArrayController *controller;
+	IBOutlet NSArrayController *arrayController;
 }
 
 @property (retain) WindowControllers_AppDelegate *appDelegate;
